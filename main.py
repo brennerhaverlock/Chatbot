@@ -64,3 +64,26 @@ def get_topic(topic_response):
         return choice(romance)
     else:
         return "Please enter a quote section or 'done' to leave"
+
+
+print("Welcome to Quote Bot")
+print("Please enter a category")
+print("""
+Humor[1]
+Relgion[2]
+Wisdom[3]
+Death[4]
+Romance[5]
+""")
+
+topic_response = ""
+while True:
+
+    topic_response = str(input("What topic are you interested in? "))
+
+    # Quits program when user responds with 'done'
+    if topic_response == 'done':
+        break
+
+    bot_response = get_topic(topic_response)
+    print(bot_response)
