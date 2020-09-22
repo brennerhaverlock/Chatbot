@@ -1,4 +1,4 @@
-
+# -*- coding: utf-8 -*-
 
 from random import choice
 
@@ -8,22 +8,37 @@ from random import choice
 def get_topic(topic_response):
 
     # add some bot responses to this list
-    inspiration = ["""“Be yourself; everyone else is already taken.”
-                                                ― Oscar Wilde  """,
-                   """“Be the change that you wish to see in the world.”
-                                              ― Mahatma Gandhi """,
-                   """“No one can make you feel inferior without your consent.”
-                                              ― Eleanor Roosevelt""",
-                   """“I have not failed. I've just found 10,000 ways that won't work.”
-                                            ― Thomas A. Edison  """,
-                   """ “It is never too late to be what you might have been.”
-                                                ― George Eliot   """]
-    religion = ["""“Anyone who thinks sitting in church can make you a Christian must also think that sitting in a garage can make you a car.”
-― Garrison Keillor """,
-                """“The Christian does not think God will love us because we are good, but that God will make us good because He loves us.”
-― C.S. Lewis """,
-                ]
-    humor = []
-    wisdom = []
-    death = []
-    romance[]
+
+    humor = ["Two things are infinite: the universe and human stupidity and I'm not sure about the universe. ― Albert Einstein ",
+             "You only live once, but if you do it right, once is enough.       ― Mae West",
+             "The person, be it gentleman or lady, who has not pleasure in a good novel, must be intolerably stupid. ― Jane Austen, Northanger Abbey"]
+    religion = []
+    wisdom = [2]
+    death = [3]
+    romance = [4]
+
+    if topic_response == "humor":
+        return choice(humor)
+    elif topic_response == "religion":
+        return choice(religion)
+    elif topic_response == "wisdon":
+        return choice(wisdom)
+    else:
+        return "Please enter a quote section or 'done' to leave"
+
+
+print("Welcome to Quote Bot")
+print("Please enter a category")
+
+topic_response = ""
+# TODO: we want to keep repeating until the user enters "done" what should we put here?
+while True:
+
+    topic_response = str(input("What topic are you interested in? "))
+
+    # Quits program when user responds with 'done'
+    if topic_response == 'done':
+        break
+
+    bot_response = get_topic(topic_response)
+    print(bot_response)
