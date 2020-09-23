@@ -79,7 +79,7 @@ Romance[5]
 topic_response = ""
 while True:
 
-    topic_response = str(input("What topic are you interested in? "))
+    topic_response = str(input("Which topic would you like to choose? "))
 
     # Quits program when user responds with 'done'
     if topic_response == 'done':
